@@ -18,6 +18,11 @@ windowrulev2 = nofocus, class:(truth-overlay)
 windowrulev2 = float, class:(truth-overlay)
 windowrulev2 = move 100%-400 20, class:(truth-overlay)
 ```
+File: Save the code above as main.py.
+
+Config: Edit ALLOWED_APPS in the code if you use different tools (e.g., specific PDF readers).
+
+Run: Open a terminal and type python main.py.
 
 Run hyprctl reload after saving.
 
