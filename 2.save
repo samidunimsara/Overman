@@ -1,0 +1,73 @@
+If you want a genuine application with a **Graphic User Interface (GUI)** that provides visuals, charts, and a "Control Center" rather than just a script running in the background, the best approach for Arch/Hyprland is to build a custom tool using **Python and PyQt6**.
+
+PyQt6 is the industry standard for Linux apps (used by KDE). It is far more stable on Wayland/Hyprland than Tkinter and allows for complex visuals like **charts, dark themes, and image rendering**.
+
+Here is the **comprehensive prompt** to generate this exact App.
+
+---
+
+**COPY AND PASTE THIS INTO THE AI:**
+
+---
+
+**Role:** You are a Senior Python Developer specializing in Linux Desktop Applications (PyQt6) and Wayland compositors (Hyprland).
+
+**The Request:**
+I need a single-file, robust **Python Application** called **"The Overman Protocol"**.
+This app will serve as a productivity enforcer and tracking dashboard for my Arch Linux (Hyprland) system. It must combine "Nietzschean Philosophy" with hard data visualization.
+
+**Tech Stack:**
+
+* **Language:** Python 3.
+* **GUI Library:** PyQt6 (Must use `QThread` for background tasks to avoid freezing the GUI).
+* **Plotting:** Matplotlib (integrated into PyQt) for generating usage charts.
+* **System Calls:** `subprocess` to call `hyprctl` (for window tracking) and `grim` (for screenshots).
+
+**App Structure & Features:**
+
+1. **The "Observer" Thread (Background):**
+* Every 5 seconds, poll the active window using `hyprctl activewindow -j`.
+* Store the data (App Class, Window Title, Duration) in an in-memory pandas DataFrame or a local CSV.
+* Every 10 minutes, take a screenshot using `grim` and save it to `~/.local/share/overman/screenshots/`.
+
+
+2. **Window 1: The Dashboard (Always accessible):**
+* **Visual Style:** Brutalist/Dark Mode (Black background, White text, Red accents).
+* **Live Stats:** A Pie Chart showing "App Usage Last Hour" (e.g., 60% Firefox, 10% Kitty).
+* **History:** A list of the last 5 detected window titles.
+* **Goal Tracker:** A prominent label displaying my current goal.
+
+
+3. **Window 2: The Lockout (The "Audit"):**
+* Triggers every 10 minutes automatically.
+* **Behavior:** Full-screen, frameless, stays on top (`Qt.WindowType.WindowStaysOnTopHint`), blocks interaction with other apps.
+* **The "Evidence":** Display the *screenshot* taken moments ago in the center of the screen so I am forced to see what I was doing.
+* **The Philosophy:** Display a random quote from Nietzsche (provided list below).
+* **The Key:** An input field where I *must* type a randomly chosen mantra (e.g., "overcome myself") to close the window.
+* **Aggression:** If I try to close it via Alt+F4, it must ignore the close event or immediately respawn.
+
+
+
+**The Nietzschean Content (To Include in Code):**
+
+* *Quotes:* "Man is a rope over an abyss.", "The ape is a laughing-stock to man.", "He who cannot obey himself will be commanded.", "Your desire for this site is the animal.", "I teach you the overman."
+* *Mantras:* "will to power", "kill the worm", "i am a bridge", "command myself".
+
+**Hyprland Specifics:**
+
+* Ensure the app sets `QT_QPA_PLATFORM=wayland` if available, or fall back gracefully.
+* Provide the necessary `windowrulev2` config lines I need to add to `hyprland.conf` to make the "Lockout" window float and obscure the screen correctly.
+
+**Deliverable:**
+
+* One complete, runnable `main.py` file.
+* A `requirements.txt` list.
+* The Hyprland config snippet.
+
+---
+
+### Why this is better than the Script:
+
+1. **Visual Shame:** This app will actually **show you the screenshot** of your distraction inside the popup window.
+2. **Live Charts:** It uses `matplotlib` to draw a real Pie Chart of your time usage, so you can see "I spent 40% of my time on YouTube" instantly.
+3. **Modern UI:** It uses a "Dark Mode" GUI which looks much cleaner and more integrated into a Hyprland setup than Zenity windows.

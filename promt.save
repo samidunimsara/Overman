@@ -1,0 +1,78 @@
+This is a **Master Prompt** designed for high-end coding models (like Gemini 2.0 Flash, Claude 3.5 Sonnet, or GPT-4o). It contains every technical detail, psychological constraint, and system-specific requirement we have built.
+
+---
+
+**COPY AND PASTE THE FOLLOWING PROMPT:**
+
+**Role:** You are a Senior Behavioral Engineer and Systems Architect specializing in Arch Linux (specifically the Omarchy distribution), Hyprland (Wayland), and Python GUI development (PyQt6).
+
+**The Mission:** Create a "Digital Frontal Lobe" application called **"The Overman Protocol"**. This app is a strict behavioral enforcer for a user with 97th Percentile Intellect but a recent collapse in Conscientiousness (dropping from 64% to 43%). The user has ADHD (time blindness) and OCD tendencies. The app is designed to bridge the gap between their high potential and low discipline.
+
+**System Environment:**
+
+* **OS:** Arch Linux (Omarchy)
+* **Compositor:** Hyprland (Wayland)
+* **Hardware:** Low-spec (4GB RAM, Intel Pentium). Code must be efficient.
+* **Tools Available:** `hyprctl` (window polling), `grim` (screenshots), `espeak-ng` (Text-to-Speech), `smtplib` (Email reporting).
+
+**Visual & Philosophical Style:**
+
+* **Brutalist / Industrial Dark Mode:** Background `#050505`, Text `#f0f0f0`, Accents `#00ff00` (Success) and `#ff0000` (Failure).
+* **Tone:** Nietzschean, cold, and objective. Use quotes like "He who cannot obey himself will be commanded."
+
+**Mandatory Features:**
+
+1. **The Architect (Startup Planner):**
+* On launch, block the screen with a "Pre-Flight Check" window.
+* User must input: **Micro-Goal**, **Duration (mins)**, and **Allowed Apps** (comma-separated whitelist).
+* Once "Engaged," spawn the Dashboard, the Warden thread, and the Overlay.
+
+
+2. **The Warden (Background Thread):**
+* Poll `hyprctl activewindow -j` every 2 seconds.
+* **App Killer:** If window title/class contains banned keywords (`porn`, `xxx`, `social media`, etc.), immediately run `hyprctl dispatch closewindow`.
+* **Drift Sentinel:** If user is in a non-whitelisted app (like a browser) for >60s, use `espeak-ng` to give an auditory warning: "Samidu, focus. Return to your goal."
+* **10-Minute Audit:** Every 10 minutes, use `grim` to capture a screenshot and trigger the **Lockout Window**.
+
+
+3. **The Lockout Window (The Prison):**
+* A fullscreen, frameless window that stays focused and covers all monitors.
+* Displays the captured screenshot of the user's activity.
+* Requires the user to type a randomly chosen Nietzschean mantra (e.g., "i command myself") to unlock.
+
+
+4. **The Dashboard (The Command Center):**
+* **Shame Mirror:** A sidebar permanently displaying the user's psychometric data: "INTELLECT: 97th %", "CONSCIENTIOUSNESS: 43% (FAILURE)", "ORGANIZATION: 9th % (CHAOS)".
+* **Hierarchical Analytics:** A `QTreeWidget` showing real-time window tracking:
+`Today History (Total Time)`
+`├── [App Class] (Total Time in App)`
+`│   └── [Window Title/URL] (Time spent on this specific task)`
+* **Willpower Distribution:** A live Matplotlib pie chart showing "Productive" vs "Drifting" time.
+
+
+5. **The Overlay (Time Anchor):**
+* A tiny, pinned, non-interactive bar in the top-right corner.
+* Visual countdown bar and clock to cure ADHD time-blindness.
+
+
+6. **The Eternal Recurrence (Accountability):**
+* **Volatile Storage:** All data must be kept in RAM-only for the session.
+* **Email Reporting:** On session end, compile the hierarchical activity tree and focus ratio. Email the report and the last "shame screenshot" to `schattenbyte0x.de@gmail.com`.
+
+
+
+**Technical Constraint:**
+
+* Consolidate all logic into **one single Python file** (`main.py`).
+* Use `QThread` for the Warden to prevent GUI freezing.
+* Ensure `QT_QPA_PLATFORM` is set to `wayland`.
+
+---
+
+### How to use this prompt:
+
+1. **Copy** the text above.
+2. **Paste** it into a new chat with an AI.
+3. **Run** the resulting code on your Omarchy system.
+
+**"What is the ape to man? A laughingstock or a painful embarrassment." Go and become the Overman.**

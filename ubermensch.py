@@ -14,7 +14,7 @@ from matplotlib.figure import Figure
 
 # --- CONFIGURATION (ADJUST THESE) ---
 # Apps that count as "Deep Work"
-ALLOWED_APPS = ["code", "kitty", "obsidian", "anki", "libreoffice", "zathura"] 
+ALLOWED_APPS = ["mpv", "kitty", "obsidian", "anki", "libreoffice", "zathura"] 
 # Apps that trigger immediate KILL + LOCKOUT
 FORBIDDEN_KEYWORDS = ["porn", "facebook", "twitter", "instagram", "tiktok"] 
 # Apps that trigger "Drift Warning" (Voice Alarm) if focused too long

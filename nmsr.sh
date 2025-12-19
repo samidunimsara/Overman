@@ -10,13 +10,13 @@ mkdir -p "$DATA_DIR"
 
 # HARD BANNED APPS (Immediate Kill -9)
 # Add keywords here. It checks Window Title, Class, and InitialClass.
-BANNED=("porn" "chatgpt" "sex" "gemini" "instagram" "tiktok" "reddit" "shorts" "reels" "twitter" "facebook" "ycombinator")
+BANNED=("porn" "chatgpt" "sex" "xhamster" "instagram" "tiktok" "reddit" "shorts" "reels" "twitter" "facebook" "gemini" "chatgpt" "deepseek" "opsec" "x")
 
 # --- MANUAL CONFIGURATION (EDIT THESE) ---
 SESSION_GOAL="Deep Work Protocol"
 SESSION_DURATION=60
 # Whitelist apps (Regex format: app1|app2|app3). Case insensitive.
-WHITELIST="kitty|anki|obsidian|mpv|zathura|sublime_text|alacritty|thorium-browser"
+WHITELIST="kitty|anki|obsidian|mpv|zathura|gemini|sublime_text|alacritty|thorium-browser|oxfordlearnersdictionaries|english"
 
 # --- GLOBAL VARIABLES ---
 START_TIME=$(date +%s)
